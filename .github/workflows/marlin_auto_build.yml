@@ -1,16 +1,11 @@
-name: marlin_auto_build
-
-on:
-  # trigger if we change a build
-  push:
-    paths:
-      - 'builds/**'
-  # trigger every night at 03:30
-  schedule:
-    - cron:  '30 3 * * *'
-
-jobs:
-  create_builds:
-    runs-on: ubuntu-latest 
-    steps:
-    - uses: zisismaras/marlin_auto_build@v1
+- name: marlin_auto_build
+  # You may pin to the exact commit or the version.
+  # uses: zisismaras/marlin_auto_build@f51223310b73db896edaa00ada5658fafc58ed49
+  uses: zisismaras/marlin_auto_build@v1.0.13
+  with:
+    # 
+    token: # optional, default is ${{ github.token }}
+    # 
+    repository: # optional, default is ${{ github.repository }}
+    # 
+    actor: # optional, default is ${{ github.actor }}
